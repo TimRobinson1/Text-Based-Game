@@ -2,4 +2,10 @@
 
 source 'https://rubygems.org'
 
-gem 'rubocop'
+
+group :test, :development do
+  gem 'rspec'
+  gem 'rubocop'
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
+end
