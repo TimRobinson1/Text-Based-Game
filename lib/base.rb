@@ -1,3 +1,4 @@
+# For managing resources
 class Base
   attr_reader :barricade_health
   STARTING_HEALTH = 100
@@ -8,7 +9,7 @@ class Base
     @barricade_health = STARTING_HEALTH
   end
 
-  def hasWater?
+  def water_supply?
     @water_supply
   end
 end

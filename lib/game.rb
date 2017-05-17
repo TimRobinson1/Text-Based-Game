@@ -1,3 +1,4 @@
+# For managing game mechanics
 class Game
   attr_reader :player, :days_survived
 

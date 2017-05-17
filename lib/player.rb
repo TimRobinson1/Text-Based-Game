@@ -1,3 +1,4 @@
+# For keeping track of player stats
 class Player
   attr_reader :health, :weapons, :hunger
 

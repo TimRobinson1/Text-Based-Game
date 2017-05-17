@@ -1,3 +1,4 @@
+# For managing individual survivor companions
 class Survivor
   attr_reader :health, :hunger, :weapons, :mood, :infected
 
