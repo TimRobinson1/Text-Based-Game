@@ -1,5 +1,5 @@
 class Player
-  attr_reader :health, :weapons
+  attr_reader :health, :weapons, :hunger
 
   MAX_HEALTH = 100
   MAX_HUNGER = 10
@@ -8,5 +8,9 @@ class Player
     @health = health
     @hunger = hunger
     @weapons = weapons
+  end
+
+  def survive_day
+    @hunger -= 1
   end
 end

@@ -11,4 +11,9 @@ describe Player do
     weak_player = Player.new(50, 10, [])
     expect(weak_player.health).to eq 50
   end
+
+  it 'reduces food levels after a new day' do
+    player.survive_day
+    expect(player.hunger).to eq 9
+  end
 end
