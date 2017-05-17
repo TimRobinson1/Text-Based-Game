@@ -12,4 +12,9 @@ describe Game do
     game.end_day
     expect(game.days_survived).to eq 1
   end
+
+  it "triggers player's #survive_day method at end of day" do
+    game.end_day
+    expect(game.player.hunger).to eq 9
+  end
 end

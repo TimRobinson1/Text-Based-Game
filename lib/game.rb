@@ -8,5 +8,6 @@ class Game
 
   def end_day
     @days_survived += 1
+    @player.survive_day
   end
 end
