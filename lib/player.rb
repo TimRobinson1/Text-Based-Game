@@ -5,10 +5,10 @@ class Player
   MAX_HEALTH = 100
   MAX_HUNGER = 10
 
-  def initialize(health = MAX_HEALTH, hunger = MAX_HUNGER, weapons = [])
+  def initialize(name = 'player', health = MAX_HEALTH, hunger = MAX_HUNGER)
     @health = health
     @hunger = hunger
-    @weapons = weapons
+    @weapons = []
   end
 
   def survive_day
