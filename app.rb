@@ -1,10 +1,12 @@
 require 'sinatra'
+require './lib/game'
 require './lib/player'
 
 # Main app controller
 class Survival < Sinatra::Base
   before do
-    @player = session[:player]
+    @game = session[:game]
+    @player = @game.player unless @game.nil?
   end
 
   use Rack::MethodOverride
@@ -15,7 +17,7 @@ class Survival < Sinatra::Base
   end
 
   post '/game/new' do
-    session[:player] = Player.new(params[:name])
+    session[:game] = Game.new(Player.new(params[:name]))
     redirect '/game'
   end
 
