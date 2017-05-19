@@ -1,4 +1,5 @@
 require 'sinatra'
+require './lib/player'
 
 class Survival < Sinatra::Base
   use Rack::MethodOverride
@@ -9,12 +10,12 @@ class Survival < Sinatra::Base
   end
 
   post '/game/new' do
-    session[:name] = params[:name]
+    session[:name] = Player.new(params[:name])
     redirect '/game'
   end
 
   get '/game' do
-    @name = session[:name]
+    @name = session[:name].name
     erb(:game)
   end
 end
