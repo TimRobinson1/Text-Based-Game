@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/player'
 
+# Main app controller
 class Survival < Sinatra::Base
   before do
     @player = session[:player]
