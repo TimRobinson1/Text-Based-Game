@@ -5,10 +5,15 @@
     <title>Survival</title>
   </head>
   <body>
-    <p>Testing infrastructure working</p>
+    <h1>Survival Game</h1>
     <form method='post' action='/game/new'>
+      <p>Choose your difficulty:</p>
+      <input type="radio" name="difficulty" value="easy"> Easy<br>
+      <input type="radio" name="difficulty" value="normal" checked> Normal<br>
+      <input type="radio" name="difficulty" value="hard"> Hard<br>
+      <p>Enter your name:</p>
       <input type='text' name='name'>
-      <input type='submit' value='Submit'>
+      <input type='submit' value='Play'>
     </form>
   </body>
 </html>

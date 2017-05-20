@@ -17,4 +17,9 @@ describe Game do
     game.end_day
     expect(game.player.hunger).to eq 9
   end
+
+  it "accepts new difficulty settings" do
+    hard_game = Game.new(:Phil, :hard)
+    expect(hard_game.difficulty).to eq :hard
+  end
 end
