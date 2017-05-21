@@ -17,7 +17,8 @@ class Survival < Sinatra::Base
   end
 
   post '/game/new' do
-    session[:game] = Game.new(Player.new(params[:name]))
+    session[:game] = Game.new(Player.new(params[:name]), params[:difficulty])
+    session[:game].new_base(Base.new)
     redirect '/game'
   end
 

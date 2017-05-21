@@ -2,6 +2,7 @@ require 'game'
 
 describe Game do
   let(:game) { described_class.new }
+  let(:base) { double(:base) }
 
   it 'initializes with player class as dependency injection' do
     new_game = Game.new('Dave')
@@ -21,5 +22,10 @@ describe Game do
   it "accepts new difficulty settings" do
     hard_game = Game.new(:Phil, :hard)
     expect(hard_game.difficulty).to eq :hard
+  end
+
+  it 'can be given a base' do
+    game.new_base(base)
+    expect(game.base).to eq base
   end
 end
