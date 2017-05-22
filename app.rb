@@ -1,6 +1,7 @@
 require 'sinatra'
 require './lib/game'
 require './lib/player'
+require './lib/base'
 
 # Main app controller
 class Survival < Sinatra::Base

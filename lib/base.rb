@@ -3,7 +3,7 @@ class Base
   attr_reader :barricade_health, :location
   STARTING_HEALTH = 100
 
-  def initialize(location = "an old house")
+  def initialize(location = "An old house", player1, player2)
     @location = location
     @water_supply = true
     @reserve_water = 10
