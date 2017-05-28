@@ -5,8 +5,8 @@ describe Game do
   let(:base) { double(:base) }
 
   it 'initializes with player class as dependency injection' do
-    new_game = Game.new('Dave')
-    expect(new_game.player).to eq 'Dave'
+    new_game = Game.new(:Dave)
+    expect(new_game.player).to eq :Dave
   end
 
   it 'increases the day count after finishing the day' do
@@ -21,6 +21,11 @@ describe Game do
 
   it 'has two survivors on your side by default' do
     expect(game.survivors.length).to eq 3
+  end
+
+  it 'provides only one extra survivor on hard mode' do
+    hard_game = Game.new(:Player, :hard)
+    expect(hard_game.survivors.length).to eq 2
   end
 
   it "accepts new difficulty settings" do

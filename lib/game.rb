@@ -6,7 +6,7 @@ class Game
     @player = player
     @days_survived = 0
     @difficulty = difficulty
-    @survivors = [player, Player.new('Dave'), Player.new('Steve')]
+    @survivors = [@player] + starting_survivors
   end
 
   def new_base(base)
@@ -16,5 +16,17 @@ class Game
   def end_day
     @days_survived += 1
     @player.survive_day
+  end
+
+  private
+
+  def starting_survivors
+    if @difficulty == :hard
+      [Survivor.new]
+    elsif @difficulty == :normal
+      [Survivor.new, Survivor.new]
+    else
+      [Survivor.new, Survivor.new, Survivor.new]
+    end
   end
 end
