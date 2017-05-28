@@ -3,6 +3,8 @@ require 'game'
 describe Game do
   let(:game) { described_class.new }
   let(:base) { double(:base) }
+  let(:hard_game) { described_class.new(:Player, :hard) }
+  let(:easy_game) { described_class.new(:Player, :easy) }
 
   it 'initializes with player class as dependency injection' do
     new_game = Game.new(:Dave)
@@ -24,17 +26,14 @@ describe Game do
   end
 
   it 'provides only one extra survivor on hard mode' do
-    hard_game = Game.new(:Player, :hard)
     expect(hard_game.survivors.length).to eq 2
   end
 
   it 'provides an extra survivor on easy mode' do
-    easy_game = Game.new(:Player, :easy)
     expect(easy_game.survivors.length).to eq 4
   end
 
   it "accepts new difficulty settings" do
-    hard_game = Game.new(:Phil, :hard)
     expect(hard_game.difficulty).to eq :hard
   end
 
