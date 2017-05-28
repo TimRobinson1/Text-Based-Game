@@ -1,8 +1,10 @@
+require_relative 'survivor'
+
 # For managing game mechanics
 class Game
   attr_reader :player, :days_survived, :difficulty, :base, :survivors
 
-  def initialize(player = Player.new, difficulty = :normal)
+  def initialize(player = Player.new, difficulty = 'normal')
     @player = player
     @days_survived = 0
     @difficulty = difficulty
@@ -21,9 +23,9 @@ class Game
   private
 
   def starting_survivors
-    if @difficulty == :hard
+    if @difficulty == 'hard'
       [Survivor.new]
-    elsif @difficulty == :normal
+    elsif @difficulty == 'normal'
       [Survivor.new, Survivor.new]
     else
       [Survivor.new, Survivor.new, Survivor.new]
