@@ -19,6 +19,10 @@ describe Game do
     expect(game.player.hunger).to eq 9
   end
 
+  it 'has two survivors on your side by default' do
+    expect(game.survivors.length).to eq 3
+  end
+
   it "accepts new difficulty settings" do
     hard_game = Game.new(:Phil, :hard)
     expect(hard_game.difficulty).to eq :hard
@@ -28,4 +32,5 @@ describe Game do
     game.new_base(base)
     expect(game.base).to eq base
   end
+
 end

@@ -9,6 +9,6 @@
     <h2>Base: <%= @game.base.location %></h2>
     <p>Name: <%= @player.name %></p>
     <p>Health: <%= @player.health %></p>
-    <p>You have ====== survivors with you.</p>
+    <p>You have <%= @game.survivors.length %> survivors with you.</p>
   </body>
 </html>
