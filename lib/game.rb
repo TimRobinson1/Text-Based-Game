@@ -8,7 +8,7 @@ class Game
     @player = player
     @days_survived = 0
     @difficulty = difficulty
-    @survivors = [@player] + starting_survivors
+    @survivors = starting_survivors
   end
 
   def new_base(base)
