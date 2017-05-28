@@ -28,6 +28,11 @@ describe Game do
     expect(hard_game.survivors.length).to eq 2
   end
 
+  it 'provides an extra survivor on easy mode' do
+    easy_game = Game.new(:Player, :easy)
+    expect(easy_game.survivors.length).to eq 4
+  end
+
   it "accepts new difficulty settings" do
     hard_game = Game.new(:Phil, :hard)
     expect(hard_game.difficulty).to eq :hard
