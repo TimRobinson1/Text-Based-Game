@@ -26,4 +26,9 @@ class Survival < Sinatra::Base
   get '/game' do
     erb(:game)
   end
+
+  get '/action' do
+    @game.player_action(params[:action])
+    redirect '/game'
+  end
 end

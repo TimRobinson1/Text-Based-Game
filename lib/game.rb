@@ -20,6 +20,12 @@ class Game
     @player.survive_day
   end
 
+  def player_action(action)
+    if action == 'rest'
+      end_day
+    end
+  end
+
   private
 
   def starting_survivors
