@@ -1,4 +1,5 @@
 require_relative 'survivor'
+require_relative 'engine'
 
 # For managing game mechanics
 class Game

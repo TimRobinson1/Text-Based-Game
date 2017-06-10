@@ -2,11 +2,13 @@ require 'sinatra'
 require './lib/game'
 require './lib/player'
 require './lib/base'
+require './lib/engine'
 
 # Main app controller
 class Survival < Sinatra::Base
   before do
     @game = session[:game]
+    @engine = session[:engine]
     @player = @game.player unless @game.nil?
   end
 
@@ -20,6 +22,7 @@ class Survival < Sinatra::Base
   post '/game/new' do
     session[:game] = Game.new(Player.new(params[:name]), params[:difficulty])
     session[:game].new_base(Base.new)
+    session[:engine] = Engine.new(session[:game])
     redirect '/game'
   end
 
@@ -28,7 +31,7 @@ class Survival < Sinatra::Base
   end
 
   get '/action' do
-    @game.player_action(params[:action])
+    @engine.process_commands(params[:action])
     redirect '/game'
   end
 end
