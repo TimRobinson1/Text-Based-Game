@@ -1,20 +1,7 @@
+const express = require('express');
 const app = express();
-const bodyParser = require('body-parser');
-
-app.use(express.static(path.join(__dirname, 'views')));
-
-app.use(session({
-  cookieName: 'session',
-  secret: 'super-secret'
-}))
-
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: true}));
 
 app.engine('.html', require('ejs').renderFile);
-
-const User = db.User;
-const Listing = db.Listing;
 
 app.get('/', function(req, res) {
   res.render('index')

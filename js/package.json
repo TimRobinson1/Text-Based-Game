@@ -1,0 +1,20 @@
+{
+  "name": "survival",
+  "version": "1.0.0",
+  "description": "browser based, text based survival game",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TimRobinson1/Text-Based-Game.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.3"
+  }
+}
