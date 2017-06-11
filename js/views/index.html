@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0", charset="utf-8">
+    <title>Survival</title>
+  </head>
+  <body>
+    <h1>Playing Game</h1>
+    <h2>Base: <%= %></h2>
+    <p>Name: <%= %></p>
+    <p>Health: <%= %></p>
+    <p>You have <%= %> survivors with you.</p>
+    <p>What would you like to do?</p>
+    <form method='get' action='/action'>
+      <input type='text' name='action'>
+      <input type='submit' value='Play'>
+    </form>
+  </body>
+</html>
