@@ -3,5 +3,6 @@ This is the start of a basic text-based zombie survival game that serves as a si
 to be updated and developed in my spare time.
 
 ## Info
-Currently, it is being geared towards being mounted using Sinatra and Ruby, but
-this may change as the project develops if an alternative seems more appropriate.
+Currently, it is being geared towards being mounted using Node and Javascript.  Prior to this,
+it was built using Sinatra and Ruby.  This older version can be found at the root in the
+```ruby``` directory.
